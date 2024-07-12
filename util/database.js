@@ -9,7 +9,7 @@ dotenv.config();
 
 // Estrae i valori delle variabili d'ambiente
 const databaseName = process.env.DB_DATABASE;
-const databaseUser = process.env.DB_USER;
+const databaseUser = process.env.DB_USERNAME;
 const databasePass = process.env.DB_PASSWORD;
 const databaseHost = process.env.DB_HOST;
 const databasePort = process.env.DB_PORT;

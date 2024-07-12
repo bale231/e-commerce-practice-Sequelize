@@ -24,9 +24,18 @@ app.set("views", "views"); // Impostare la directory dei file di visualizzazione
 
 app.use(bodyparser.urlencoded({ extended: false })); // Abilitare il parsing del corpo della richiesta come URL codificato
 app.use(express.static(path.join(__dirname, "public"))); // Definire la directory delle risorse statiche come "public"
-app.use("/admin", adminRoutes); // Utilizzare il routing per l'area amministrativa
+//app.use("/admin", adminRoutes); // Utilizzare il routing per l'area amministrativa
 app.use(shopRoutes); // Utilizzare il routing per l'area shop
 app.use(errorController.get404); // Utilizzare il controller per gestire gli errori 404
-app.listen(port, () => { // Avviare l'applicazione sulla porta specifica
-  console.log(`listening on port ${port}`); // Stampare nel terminale che l'applicazione è in ascolto sulla porta specificata
-});
+
+// Creare le tabelle nel database
+sequelize
+  .sync({ force: true })
+  .then((result) => {
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });

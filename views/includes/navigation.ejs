@@ -1,0 +1,45 @@
+<div class="backdrop"></div>
+<header class="main-header">
+    <div class="dropdown-chevron">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a class="<%= path === '/' ? 'active' : '' %>" aria-current="page" href="/">Home</a></li>
+            <li><a class="<%= path === '/shop' ? 'active' : '' %>" aria-current="page" href="/woocommerce/shop">Shop</a></li>
+            <% if ( role_id === 1 ) { %>
+                <li><a class="<%= path === '/admin' ? 'active' : '' %>" href="/admin/products">Admin</a></li>
+                <% } %>
+                    <li><a class="<%= path === '/cart' ? 'active' : '' %>" href="/woocommerce/cart">Cart</a></li>
+                    <li><a class="<%= path === '/orders' ? 'active' : '' %>" href="/woocommerce/orders">Orders</a></li>
+        </ul>
+    </nav>
+    <nav class="main-nav form-nav">
+        <ul>
+            <li><a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a></li>
+            <li><a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">Sign Up</a></li>
+        </ul>
+    </nav>
+    
+    <nav class="mobile-nav">
+        <ul>
+            <li><a class="<%= path === '/' ? 'active' : '' %>" aria-current="page" href="/">Home</a></li>
+            <li><a class="<%= path === '/shop' ? 'active' : '' %>" aria-current="page" href="/woocommerce/shop">Shop</a></li>
+            <% if ( role_id === '1' ) { %>
+                <li><a class="<%= path === '/admin' ? 'active' : '' %>" href="/admin/products">Admin</a></li>
+                <% } %>
+                    <li><a class="<%= path === '/cart' ? 'active' : '' %>" href="/woocommerce/cart">Cart</a></li>
+                    <li><a class="<%= path === '/orders' ? 'active' : '' %>" href="/woocommerce/orders">Orders</a></li>
+        </ul>
+    </nav>
+    <nav class="mobile form-nav">
+        <ul>
+            <li><a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a></li>
+            <li><a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    
+</header>
